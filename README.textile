@@ -59,7 +59,7 @@ Implement Data Source Methods:
 - (CGFloat)pieChart:(XYPieChart *)pieChart valueForSliceAtIndex:(NSUInteger)index;
 - (UIColor *)pieChart:(XYPieChart *)pieChart colorForSliceAtIndex:(NSUInteger)index;	//optional
 - (NSString *)pieChart:(XYPieChart *)pieChart textForSliceAtIndex:(NSUInteger)index;	//optional
-- (UIImage *)pieChart:(XYPieChart *)pieChart imageForSlicesIndex:(NSUInteger)index;     //optional for added images on each slices
+- (UIImage *)pieChart:(XYPieChart *)pieChart imageForSlicesIndex:(NSUInteger)index;     //optional for add image on each slices
 </pre>
 
 Implement  Delegate Methods (OPTIONAL):
