@@ -4,6 +4,7 @@
 //
 //  Created by XY Feng on 2/24/12.
 //  Copyright (c) 2012 Xiaoyang Feng. All rights reserved.
+//  Modified by Irsahd PC on 17/06/16
 //
 
 #import <UIKit/UIKit.h>
@@ -19,5 +20,6 @@
 @property (strong, nonatomic) IBOutlet UISegmentedControl *indexOfSlices;
 @property (strong, nonatomic) IBOutlet UIButton *downArrow;
 @property(nonatomic, strong) NSMutableArray *slices;
+@property(nonatomic, strong) NSMutableArray *pieChartImage;
 @property(nonatomic, strong) NSArray        *sliceColors;
 @end

@@ -36,11 +36,12 @@
 @optional
 - (UIColor *)pieChart:(XYPieChart *)pieChart colorForSliceAtIndex:(NSUInteger)index;
 - (NSString *)pieChart:(XYPieChart *)pieChart textForSliceAtIndex:(NSUInteger)index;
+- (UIImage *)pieChart:(XYPieChart *)pieChart imageForSlicesIndex:(NSUInteger)index;
 @end
 
 @protocol XYPieChartDelegate <NSObject>
 @optional
-- (void)pieChart:(XYPieChart *)pieChart willSelectSliceAtIndex:(NSUInteger)index;
+- (void)pieChart:(XYPieChart *)pieChart willSelectSliceAtIndex:(NSUInteger)index withSelection:(BOOL)outside;
 - (void)pieChart:(XYPieChart *)pieChart didSelectSliceAtIndex:(NSUInteger)index;
 - (void)pieChart:(XYPieChart *)pieChart willDeselectSliceAtIndex:(NSUInteger)index;
 - (void)pieChart:(XYPieChart *)pieChart didDeselectSliceAtIndex:(NSUInteger)index;
@@ -61,11 +62,13 @@
 @property(nonatomic, assign) CGFloat selectedSliceStroke;
 @property(nonatomic, assign) CGFloat selectedSliceOffsetRadius;
 @property(nonatomic, assign) BOOL    showPercentage;
+@property(nonatomic, assign) CGFloat radiusOffset;
 - (id)initWithFrame:(CGRect)frame Center:(CGPoint)center Radius:(CGFloat)radius;
 - (void)reloadData;
 - (void)setPieBackgroundColor:(UIColor *)color;
 
 - (void)setSliceSelectedAtIndex:(NSInteger)index;
 - (void)setSliceDeselectedAtIndex:(NSInteger)index;
+- (void)tableviewClick:(NSUInteger)selectedIndex;
 
 @end;

@@ -33,11 +33,14 @@
 {
     [super viewDidLoad];
     self.slices = [NSMutableArray arrayWithCapacity:10];
+    _pieChartImage = [[NSMutableArray alloc]init];
     
     for(int i = 0; i < 5; i ++)
     {
         NSNumber *one = [NSNumber numberWithInt:rand()%60+20];
         [_slices addObject:one];
+        UIImage *pieChartIcon = [self getCategoryImage];
+        [_pieChartImage addObject:pieChartIcon];
     }
     
     [self.pieChartLeft setDataSource:self];
@@ -127,8 +130,11 @@
     [self.pieChartLeft reloadData];
     [self.pieChartRight reloadData];
 }
-
-- (IBAction)addSliceBtnClicked:(id)sender 
+-(UIImage*)getCategoryImage{
+    
+    return [UIImage imageNamed:@"sample.png"];
+}
+- (IBAction)addSliceBtnClicked:(id)sender
 {
     NSInteger num = [self.numOfSlices.text intValue];
     if (num > 0) {
@@ -148,6 +154,8 @@
                 }
             }
             [_slices insertObject:one atIndex:index];
+            UIImage *pieChartIcon = [self getCategoryImage];
+            [_pieChartImage addObject:pieChartIcon];
         }
     }
     else if (num < 0)
@@ -167,6 +175,7 @@
                         break;
                 }
                 [_slices removeObjectAtIndex:index];
+                [_pieChartImage removeObjectAtIndex:index];
             }
         }
     }
@@ -206,6 +215,10 @@
     if(pieChart == self.pieChartRight) return nil;
     return [self.sliceColors objectAtIndex:(index % self.sliceColors.count)];
 }
+-(UIImage *)pieChart:(XYPieChart *)pieChart imageForSlicesIndex:(NSUInteger)index{
+    return [self.pieChartImage objectAtIndex:index];
+}
+
 
 #pragma mark - XYPieChart Delegate
 - (void)pieChart:(XYPieChart *)pieChart willSelectSliceAtIndex:(NSUInteger)index
