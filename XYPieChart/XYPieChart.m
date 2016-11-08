@@ -330,8 +330,8 @@ static CGPathRef CGPathCreateArc(CGPoint center, CGFloat radius,CGFloat radiusOf
         if(isOnEnd)
         {
             for(SliceLayer *layer in _pieView.layer.sublayers){
-                               // [self updateLabelForLayer:layer value:0];
-                 [self updateImageForLayer:layer image:layer.pieImage];
+                                //[self updateLabelForLayer:layer value:0];
+                                [self updateImageForLayer:layer image:layer.pieImage];
                 [layer createArcAnimationForKey:@"startAngle"
                                       fromValue:[NSNumber numberWithDouble:_startPieAngle]
                                         toValue:[NSNumber numberWithDouble:_startPieAngle]
@@ -421,7 +421,7 @@ static CGPathRef CGPathCreateArc(CGPoint center, CGFloat radius,CGFloat radiusOf
             }
             
             [self updateImageForLayer:layer image:layer.pieImage];
-           // [self updateLabelForLayer:layer value:values[index]];
+//            [self updateLabelForLayer:layer value:values[index]];
             [layer createArcAnimationForKey:@"startAngle"
                                   fromValue:[NSNumber numberWithDouble:startFromAngle]
                                     toValue:[NSNumber numberWithDouble:startToAngle+_startPieAngle]

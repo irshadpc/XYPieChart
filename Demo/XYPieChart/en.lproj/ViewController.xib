@@ -11,7 +11,7 @@
                 <outlet property="indexOfSlices" destination="62" id="64"/>
                 <outlet property="numOfSlices" destination="66" id="68"/>
                 <outlet property="percentageLabel" destination="38" id="39"/>
-                <outlet property="pieChartLeft" destination="36" id="45"/>
+                <outlet property="pieChartLeft" destination="36" id="fgw-uS-IJI"/>
                 <outlet property="pieChartRight" destination="4" id="46"/>
                 <outlet property="selectedSliceLabel" destination="40" id="42"/>
                 <outlet property="view" destination="2" id="3"/>
